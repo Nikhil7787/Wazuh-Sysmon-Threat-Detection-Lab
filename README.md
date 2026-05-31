@@ -45,4 +45,18 @@ This project explores the use of Wazuh and Sysmon to collect endpoint telemetry,
 
 ## 🏗️ Architecture
 
-> Architecture diagram will be added after project completion.
+```text
+Windows 11 Endpoint
+(Sysmon + Wazuh Agent)
+          │
+          ▼
+     Wazuh Manager
+          │
+          ▼
+     Wazuh Indexer
+          │
+          ▼
+    Wazuh Dashboard
+```
+
+The Windows 11 endpoint generates security events and Sysmon telemetry. The Wazuh Agent forwards logs to the Wazuh Manager, where events are processed and analyzed. Processed events are stored in the Wazuh Indexer and visualized through the Wazuh Dashboard for monitoring and investigation.
